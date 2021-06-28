@@ -1,14 +1,13 @@
 apply plugin: 'com.android.library'
-apply from: 'bintray.gradle'
 
 android {
-    compileSdkVersion build_versions.compileSdk
-    buildToolsVersion build_versions.buildTools
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
-        minSdkVersion build_versions.minSdk
-        targetSdkVersion build_versions.targetSdk
-        versionCode app_version.versionCode
-        versionName app_version.versionName
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 25
+        versionName "1.1.9"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -38,6 +37,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api deps.support.appcompat
-    api deps.zxing
+    api "com.android.support:appcompat-v7:28.0.0"
+    api "com.google.zxing:core:3.3.3"
 }
